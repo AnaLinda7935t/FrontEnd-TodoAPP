@@ -20,6 +20,10 @@ export class AppComponent {
     this.READ_tarefas();
   }
 
+  ngOnInit() {
+    this.READ_tarefas();
+  }
+
   CREATE_tarefa(descricaoNovaTarefa: string) {
     var novaTarefa = new Tarefa(descricaoNovaTarefa, false);
     this.http.post<Tarefa>(`${this.apiURL}/api/post`, novaTarefa).subscribe(
