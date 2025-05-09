@@ -51,6 +51,7 @@ export class AppComponent {
 
    onKeyUp(event: KeyboardEvent): void {
     if (event.key === 'F5') {
+      event.preventDefault();
       this.READ_tarefas();
     }
   }
