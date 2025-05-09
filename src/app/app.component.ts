@@ -1,6 +1,6 @@
  import { Component } from '@angular/core';
 import { Tarefa } from "./tarefa";
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -33,7 +33,14 @@ export class AppComponent {
   }   
 
   READ_tarefas() {
-    this.http.get<Tarefa[]>(`${this.apiURL}/api/getAll`).subscribe(
+
+    const headers = new HttpHeaders({
+      'Cache-Control': 'no-cache',
+      'Pragma': 'no-cache',
+      'Expires': '0'
+    });
+
+    this.http.get<Tarefa[]>(`${this.apiURL}/api/getAll`, { headers }).subscribe(
     resultado => this.arrayDeTarefas=resultado);
   }
 
