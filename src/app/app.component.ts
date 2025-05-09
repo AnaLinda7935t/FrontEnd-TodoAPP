@@ -22,6 +22,7 @@ export class AppComponent {
 
   ngOnInit() {
     this.READ_tarefas();
+    console.log("ngOnInit chamado, carregando tarefas...");
   }
 
   CREATE_tarefa(descricaoNovaTarefa: string) {
@@ -57,6 +58,7 @@ export class AppComponent {
     if (event.key === 'F5') {
       event.preventDefault();
       this.READ_tarefas();
+      console.log("Chamado keyup chamado, carregando tarefas...");
     }
   }
    
