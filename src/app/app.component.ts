@@ -48,6 +48,12 @@ export class AppComponent {
     tarefaAserModificada).subscribe(
     resultado => { console.log(resultado); this.READ_tarefas(); });
    }
+
+   onKeyUp(event: KeyboardEvent): void {
+    if (event.key === 'F5') {
+      this.READ_tarefas();
+    }
+  }
    
 }
 
